@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SA17 A-Painter Files</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row"></div>
+</div>
+
+<script id="painting-template" type="text/x-handlebars-template">
+    <div class="col s12 m6 l4">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{imageurl}}" alt="{{name}}" onerror="this.src='https://placeimg.com/640/640/tech/grayscale';">
+                <span class="card-title">{{name}}</span>
+            </div>
+            <div class="card-content">
+                <b>Authors:</b>
+                <p>{{#if authors}}{{authors}}{{else}}Unknown (claim by making an <a href="https://github.com/mrfrase3/a-painterSA17/issues">issue in the github</a>){{/if}}</p>
+                <b>Created:</b>
+                <p>{{created}}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{url}}">Check it out</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.min.js" integrity="sha256-/As5lS2upX/fOCO/h/5wzruGngVW3xPs3N8LN4FkA5Q=" crossorigin="anonymous"></script>
+<script src="./index.js" ></script>
+</body>
+</html>
