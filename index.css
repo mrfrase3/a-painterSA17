@@ -1,3 +1,17 @@
 body, html {
     height: 100%;
 }
+
+@media only screen and (max-width: 1500px) {
+    .brand-logo {
+        font-size: 1rem!important;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .brand-logo {
+        line-height: 2;
+        text-align: center;
+        top: 0.5em;
+    }
+}

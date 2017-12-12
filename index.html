@@ -5,9 +5,28 @@
     <title>SA17 A-Painter Files</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
+
+<nav>
+    <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">Painting Sessions from SIGGRAPH Asia 2017</a>
+        <a href="#" data-activates="mobile-side-nav" class="button-collapse"><i class="fa fa-bars"></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145"><i class="fa fa-globe"></i> About</a></li>
+            <li><a href="https://github.com/aframevr/a-painter"><i class="fa fa-github"></i> A-Frame Github</a></li>
+            <li><a href="https://github.com/mrfrase3/a-painter-socket-server"><i class="fa fa-github"></i> Multi-player Github</a></li>
+        </ul>
+        <ul id="mobile-side-nav" class="side-nav">
+            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145"><i class="fa fa-globe"></i> About</a></li>
+            <li><a href="https://github.com/aframevr/a-painter"><i class="fa fa-github"></i> A-Frame Github</a></li>
+            <li><a href="https://github.com/mrfrase3/a-painter-socket-server"><i class="fa fa-github"></i> Multi-player Github</a></li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container">
     <div class="row"></div>
 </div>
@@ -24,9 +43,13 @@
                 <p>{{#if authors}}{{authors}}{{else}}Unknown (claim by making an <a href="https://github.com/mrfrase3/a-painterSA17/issues">issue in the github</a>){{/if}}</p>
                 <b>Created:</b>
                 <p>{{created}}</p>
+                {{#if desc}}
+                <b>Description:</b>
+                <p>{{desc}}</p>
+                {{/if}}
             </div>
             <div class="card-action">
-                <a href="{{url}}">Check it out</a>
+                <a href="{{url}}" target="_blank">Explore in 3D/VR</a>
             </div>
         </div>
     </div>

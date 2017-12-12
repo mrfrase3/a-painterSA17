@@ -9,7 +9,7 @@
         authors: about.authors,
         created: moment(about.created).format('llll'),
         imageurl: `${base_url}paintings/${name}/Screenshot.png`,
-        url: `${apainter_url}?urljson=${encodeURIComponent(`${base_url}paintings/${name}/painting.json`)}`
+        url: `${apainter_url}?url=${about.url}`
       };
       $('.row').append(template(context));
     });
@@ -20,4 +20,6 @@
       load_painting(file);
     });
   });
+
+  $(".button-collapse").sideNav();
 })();
