@@ -9,7 +9,7 @@
     $.get('./paintings/'+name+'/about.json').done(about=>{
       if(c%3 == 0){
         $currow = $('<div class="row"></div>');
-        $paintings.append(currow);
+        $paintings.append($currow);
       }
       c++;
       let context = {
