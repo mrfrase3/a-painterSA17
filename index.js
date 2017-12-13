@@ -2,7 +2,7 @@
   const template = Handlebars.compile($('#painting-template').html());
   const base_url = window.location.origin + (window.location.pathname.replace(/[^\\\/]*$/, '') || '/');
   const apainter_url = 'https://aframe.io/a-painter/';
-  const $paintings = $paintings;
+  const $paintings =  $('.paintings');
   let $currow = null;
   let c = 0;
   const load_painting = (name) => {
