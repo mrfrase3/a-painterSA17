@@ -9,6 +9,13 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-111426456-1');
+        
+        var trackOutboundLink = function(url) {
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback': function(){document.location = url;}
+            });
+        };
     </script>
     <meta charset="UTF-8">
     <title>SA17 A-Painter Files</title>
@@ -24,14 +31,14 @@
         <a href="#" class="brand-logo">Painting Sessions from SIGGRAPH Asia 2017</a>
         <a href="#" data-activates="mobile-side-nav" class="button-collapse"><i class="fa fa-bars"></i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145"><i class="fa fa-globe"></i> About</a></li>
-            <li><a href="https://github.com/aframevr/a-painter"><i class="fa fa-github"></i> A-Frame Github</a></li>
-            <li><a href="https://github.com/mrfrase3/a-painter-socket-server"><i class="fa fa-github"></i> Multi-player Github</a></li>
+            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145" onclick="trackOutboundLink('https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145'); return false;"><i class="fa fa-globe"></i> About</a></li>
+            <li><a href="https://github.com/aframevr/a-painter" onclick="trackOutboundLink('https://github.com/aframevr/a-painter'); return false;"><i class="fa fa-github"></i> A-Frame Github</a></li>
+            <li><a href="https://github.com/mrfrase3/a-painter-socket-server" onclick="trackOutboundLink('https://github.com/mrfrase3/a-painter-socket-server'); return false;"><i class="fa fa-github"></i> Multi-player Github</a></li>
         </ul>
         <ul id="mobile-side-nav" class="side-nav">
-            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145"><i class="fa fa-globe"></i> About</a></li>
-            <li><a href="https://github.com/aframevr/a-painter"><i class="fa fa-github"></i> A-Frame Github</a></li>
-            <li><a href="https://github.com/mrfrase3/a-painter-socket-server"><i class="fa fa-github"></i> Multi-player Github</a></li>
+            <li><a href="https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145" onclick="trackOutboundLink('https://sa2017.siggraph.org/attendees/vr-showcase?view=event&eid=145'); return false;"><i class="fa fa-globe"></i> About</a></li>
+            <li><a href="https://github.com/aframevr/a-painter" onclick="trackOutboundLink('https://github.com/aframevr/a-painter'); return false;"><i class="fa fa-github"></i> A-Frame Github</a></li>
+            <li><a href="https://github.com/mrfrase3/a-painter-socket-server" onclick="trackOutboundLink('https://github.com/mrfrase3/a-painter-socket-server'); return false;"><i class="fa fa-github"></i> Multi-player Github</a></li>
         </ul>
     </div>
 </nav>
@@ -57,7 +64,7 @@
                 {{/if}}
             </div>
             <div class="card-action">
-                <a href="{{url}}" target="_blank">Explore in 3D/VR</a>
+                <a href="{{url}}" target="_blank" onclick="trackOutboundLink('{{url}}'); return false;">Explore in 3D/VR</a>
             </div>
         </div>
     </div>
