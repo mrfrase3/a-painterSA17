@@ -11,12 +11,14 @@
         gtag('config', 'UA-111426456-1');
         
         var trackOutboundLink = function(url, blank) {
-            ga('send', 'event', {
-                eventCategory: 'Click Link',
-                eventAction: url,
-                transport: 'beacon',
-                hitCallback: function(){if(!blank) document.location = url;}
-            });
+            if ("ga" in window) {
+                tracker = ga.getAll()[0];
+                if (tracker)
+                tracker.send("event", "Click_Link", url, {
+                    transport: 'beacon',
+                    hitCallback: function(){if(!blank) document.location = url;}
+                });
+            }
         };
     </script>
     <meta charset="UTF-8">
