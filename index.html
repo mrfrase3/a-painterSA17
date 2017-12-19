@@ -10,10 +10,12 @@
 
         gtag('config', 'UA-111426456-1');
         
-        var trackOutboundLink = function(url) {
-            ga('send', 'event', 'outbound', 'click', url, {
-                'transport': 'beacon',
-                'hitCallback': function(){document.location = url;}
+        var trackOutboundLink = function(url, blank) {
+            ga('send', 'event', {
+                eventCategory: 'Click Link',
+                eventAction: url,
+                transport: 'beacon',
+                hitCallback: function(){if(!blank) document.location = url;}
             });
         };
     </script>
@@ -64,7 +66,7 @@
                 {{/if}}
             </div>
             <div class="card-action">
-                <a href="{{url}}" target="_blank" onclick="trackOutboundLink('{{url}}'); return false;">Explore in 3D/VR</a>
+                <a href="{{url}}" target="_blank" onclick="trackOutboundLink('{{url}}', true)">Explore in 3D/VR</a>
             </div>
         </div>
     </div>
